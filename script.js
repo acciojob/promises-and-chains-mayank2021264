@@ -6,8 +6,9 @@ function PromiseChaining(event){
 	event.preventDefault();
 	let Uage = parseInt(document.getElementById('age').value);
 	let Uname = document.getElementById('name').value;
-	if(!Uage || !Uname){
-		alert("Please enter valid details.")
+	if(isNaN(Uage) || !Uname){
+		alert("Please enter valid details");
+		return ;
 	}
 	let myPromise = new Promise((resolve, reject) => {
 		if(Uage >=18){
